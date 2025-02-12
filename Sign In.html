@@ -1,0 +1,83 @@
+<html>
+<head>
+  <title> Sign In </title>
+  <link rel="stylesheet" type="text/css" href="css/style1.css">
+  <script>
+	function Password1(){
+	var x = document.getElementById("pass");
+	var y = document.getElementById("togglepass1");
+	
+	
+	if(x.type =="password"){
+	  x.type ="text"
+	  y.value ="Hide Password";
+	
+	}else{
+	  x.type ="password";
+	  y.value ="Show Password";
+	}
+	}
+	
+  </script>
+  
+  <style>
+    body {
+	background-image: url("img_29.jpg");
+	background-size: cover;
+	background-position: top;
+	}
+
+
+  </style>
+  
+</head>
+
+<body>
+  
+	<ul>
+		<li> <a href="Home.html"> HOME </a> </li>
+		<li> <a href="About us.html" target="_blank"> ABOUT US </a> </li>
+		<li> <a href=""> SERVICES </a>
+		  <ul>
+			<li> <a href="Reservation.html" target="_blank"> Reservation </a> </li>
+			<li> <a href="Feedback.html" target="_blank"> Feedback </a> </li>
+		  </ul>
+		</li>
+		<li> <a href=""> CONTACT </a>
+		  <ul>
+		  <li> <a href="https://www.facebook.com/abdurahman.idris.357" target="_blank"> Facebook </a> </li>
+		  </ul>
+		</li>
+		<li> <a href="Sign In.html" target="_blank"> LOG IN </a> </li>
+	  </ul> <br>
+  <center>
+  <br>
+    <h2><u> Sign In </u></h2>
+    <form>
+      <table>
+	    <tr>
+		  <td align="right"> <input type="email" name="email" placeholder="Email Address" required> </td>
+		</tr> 
+        
+        <tr>
+          <td align="right"> <input type="password" id="pass" placeholder="Enter Password" pattern=".{8,16}" required title="8 to 16 characters"> </td>
+		  
+		  <td>
+		    <!-- toggle password visibility -->
+			<input type="button" id="togglepass1" value="Show Password" style="cursor: pointer;" onclick="Password1()">
+		  </td>
+        </tr>		  
+
+	    <tr>
+		  <td colspan="2" align="center"> <input type="submit" value="Sign In" style="cursor: pointer;"> </td>
+		</tr>
+		
+		<tr>
+		   <td colspan="2" align="center"> Don't have an account? <a href="Registration.html"> Register here </a> </td>
+		</tr>
+		
+	  </table>
+	</form>
+  </center>
+</body>  
+</html>

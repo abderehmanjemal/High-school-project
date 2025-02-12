@@ -1,0 +1,183 @@
+<html>
+<head>
+  <title> Register </title>
+  
+  <script type="text/javascript">
+    function Password1(){
+	var x = document.getElementById("pass");
+	var y = document.getElementById("togglepass1");
+	
+	
+	if(x.type =="password"){
+	  x.type ="text"
+	  y.value ="Hide Password";
+	
+	}else{
+	  x.type ="password";
+	  y.value ="Show Password";
+	}
+	}
+    
+	function Password2(){
+	var x = document.getElementById("confirm pass");
+	var y = document.getElementById("togglepass2");
+	
+	
+	if(x.type =="password"){
+	  x.type ="text"
+	  y.value ="Hide Password";
+	
+	}else{
+	  x.type ="password";
+	  y.value ="Show Password";
+	}
+	} 
+  
+    function Validate(){
+    var password = document.getElementById("pass").value;
+    var confirmPassword = document.getElementById("confirm pass").value;
+	
+	
+    if (password != confirmPassword){
+      alert("Passwords do not match.");
+      return false;
+      }
+	  
+      }
+
+    function lettersOnly(input){
+	var regex = /[^a-z]/gi;
+	input.value = input.value.replace(regex,"");
+	
+	}
+	
+	function numbersOnly(input){
+	var regex = /[^0-9]/g;
+	input.value = input.value.replace(regex,"");
+	
+	}
+
+  </script>
+  
+  <link rel="stylesheet" type="text/css" href="css/style1.css">
+  <style>
+    body {
+	background-image: url("img_20.jpg");
+	background-size: cover;
+	}
+
+
+  </style>
+
+  
+</head>
+<body>
+
+  <ul>
+    <li> <a href=""> HOME </a> </li>
+    <li> <a href="About us.html" target="_blank"> ABOUT US </a> </li>
+    <li> <a href=""> SERVICES </a>
+      <ul>
+	    <li> <a href="Reservation.html" target="_blank"> Reservation </a> </li>
+		<li> <a href="Feedback.html" target="_blank"> Feedback </a> </li>
+	  </ul>
+	</li>
+    <li> <a href=""> CONTACT </a>
+      <ul>
+	    <li> <a href="https://twitter.com/AbdurahmanIdr18" target="_blank"> Twitter </a> </li>
+	    <li> <a href="https://www.instagram.com/abdurahman_1441/" target="_blank"> Instagram </a> </li>
+	    <li> <a href="https://bit.ly/38Hz7Oc" target="_blank"> WhatsApp </a> </li>
+		<li> <a href="https://www.facebook.com/abdurahman.idris.357" target="_blank"> Facebook </a> </li>
+	  </ul>
+    </li>
+	<li> <a href="Sign In.html" target="_blank"> LOG IN </a> </li>
+  </ul>
+  
+  <center>
+  <br><br>
+    <h2><u> Create Account </u></h2>
+	<form>
+	  <table>
+	    <tr>
+		  <td align="right"> <input type="text" id="firstname" placeholder="First Name" onkeyup="lettersOnly(this)" maxlength="10" required> </td>
+		</tr>
+	    
+		<tr>
+		  <td align="right"> <input type="text" id="lastname" placeholder="Last Name" onkeyup="lettersOnly(this)" maxlength="10" required> </td>
+		</tr>
+		
+	    <tr>
+		  <td align="right"> <input type="text" placeholder="Username" required> </td>
+		</tr>
+		
+		<tr>
+          <td align="right"> <input type="email" placeholder="Email(eg. a123@gmail.com)" required> </td>
+		</tr>
+		
+		<tr>
+          <td align="right"> <input type="password" id="pass" placeholder="Enter Password" pattern=".{8,16}" required title="8 to 16 characters"> </td>
+		  
+		  <td>
+		    <!-- toggle password visibility -->
+			<input type="button" id="togglepass1" value="Show Password" style="cursor: pointer;" onclick="Password1()">
+		  </td>
+		</tr>
+		
+		<tr>
+		  <td align="right"> <input type="password" id="confirm pass" placeholder="Confirm Password" pattern=".{8,16}" required title="8 to 16 characters"> </td>
+		  
+		  <td>
+		    <!-- toggle password visibility -->
+			<input type="button" id="togglepass2" value="Show Password" style="cursor: pointer;" onclick="Password2()">
+		  
+		  </td>
+		<tr>
+		  <td align="center"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    <input type="radio" name="gender" style="cursor: pointer;" required> Male
+			<input type="radio" name="gender" style="cursor: pointer;" required> Female
+		  </td>
+		</tr>	
+		
+		<tr>
+		  <td align="center">
+		    <select name="Country Code">
+			  <option> +20 </option>
+			  <option> +90 </option>
+			  <option> +98 </option>
+			  <option> +212 </option>
+			  <option> +213 </option>
+			  <option> +216 </option>
+			  <option> +218 </option>
+			  <option> +961 </option>
+			  <option> +962 </option>
+			  <option> +963 </option>
+			  <option> +964 </option>
+			  <option> +965 </option>
+			  <option selected> +966 </option>
+			  <option> +967 </option>
+			  <option> +968 </option>
+			  <option> +970 </option>
+			  <option> +971 </option>
+			  <option> +973 </option>
+			  <option> +974 </option>
+			</select>
+			<input type="mobile" name="mobile no." placeholder="5********" onkeyup="numbersOnly(this)" maxlength="9" required>
+		  </td>
+		</tr>	
+		
+		<tr>
+		  <td colspan="2" align="center"> 
+		  <input type="submit" name="submit" value="Submit" style="cursor: pointer;" onclick="return Validate()">
+		  </td>
+		</tr>
+		
+		<tr>
+		  <td colspan="2" align="center"> Already have an account? <a href="Sign In.html"> Sign In Here </a> </td>
+		</tr>
+	
+	
+	  </table>
+	</form>
+  </center>
+</body>
+</html>	
